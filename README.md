@@ -1,0 +1,1 @@
+[![Coverage Status](https://coveralls.io/repos/github/alu0101124506/ull-esit-inf-dsi-2122-exam-june-second-exerciseX-alu0101124506/badge.svg?branch=master)](https://coveralls.io/github/alu0101124506/ull-esit-inf-dsi-2122-exam-june-second-exerciseX-alu0101124506?branch=master)
