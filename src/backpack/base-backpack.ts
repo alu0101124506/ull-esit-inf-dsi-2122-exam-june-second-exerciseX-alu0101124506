@@ -65,18 +65,25 @@ export class Backpack {
 
     /**
      * Rellena la mochila segun lo calculado con el sort de manera random
-     * @returns el valor de la mochila
+     * @returns devuelve el mejor valor para la mochila de los calculados
      */
     fillBackpackRandom(): number {
         let backpackPosible: number[] = [];
-        this.pesoBeneficio.forEach(ratio => {
-        });
+        let backpack = 0, i = 0;
+        while (i < 5) {
+            let random = Math.floor(Math.random() * this.pesoBeneficio.length) + 1;
+            if ((backpack + this.pesoBeneficio[random-1][0]) <= this.pesomax) { 
+                backpack = backpack + this.pesoBeneficio[random-1][0];
+            }
+            backpackPosible.push(backpack);
+            i++;
+        }
         backpackPosible = backpackPosible.sort((n1, n2) => n2 - n1);
-        let bestBackpack: number = backpackPosible[0];
-        return bestBackpack;
+        return backpackPosible[0];
     }
 }
 
 let prueba: Backpack = new Backpack([[1, 5], [4, 8], [9, 1], [8, 2]], 5);
 
 prueba.fillBackpackVoraz();
+prueba.fillBackpackRandom();
