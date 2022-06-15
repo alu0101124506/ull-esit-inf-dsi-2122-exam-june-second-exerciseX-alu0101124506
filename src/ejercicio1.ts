@@ -57,11 +57,10 @@ export class Backpack {
      * @returns el valor de la mochila
      */
     fillBackpackRandom(): number {
-        let backpack = 0;
+        let backpack: number[] = [];
+        
         this.pesoBeneficio.forEach(ratio => {
-            if ((backpack + ratio[0]) < this.pesomax) {
-                
-            }
+
         });
         return backpack;
     }
