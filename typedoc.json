@@ -1,6 +1,7 @@
 {
     "entryPoints": [
-        "./src/ejercicio1.ts"
+        "./src/backpack/base-backpack.ts",
+        "./src/backpack/sort-backpack.ts"
  
     ],
     "out": "./docs"
