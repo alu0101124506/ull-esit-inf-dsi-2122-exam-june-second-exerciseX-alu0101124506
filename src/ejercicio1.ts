@@ -40,9 +40,10 @@ export class Backpack {
     }
 
     /**
-     * Rellena la mochila segun lo calculado con el sort
+     * Rellena la mochila segun lo calculado con el sort de manera voraz
+     * @returns el valor de la mochila
      */
-    fillBackpack(): number {
+    fillBackpackVoraz(): number {
         let backpack = 0;
         this.pesoBeneficio.forEach(ratio => {
             if ((backpack + ratio[0]) < this.pesomax) {
@@ -52,9 +53,22 @@ export class Backpack {
         return backpack;
     }
 
+    /**
+     * Rellena la mochila segun lo calculado con el sort de manera random
+     * @returns el valor de la mochila
+     */
+    fillBackpackRandom(): number {
+        let backpack = 0;
+        this.pesoBeneficio.forEach(ratio => {
+            if ((backpack + ratio[0]) < this.pesomax) {
+                
+            }
+        });
+        return backpack;
+    }
 }
 
 let prueba: Backpack = new Backpack([[1, 5], [4, 8], [9, 1], [8, 2]], 5);
 
 prueba.sortPesoBeneficio();
-prueba.fillBackpack();
+prueba.fillBackpackVoraz();
