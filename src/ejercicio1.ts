@@ -34,8 +34,7 @@ export class Backpack {
      * Ordena el array tupla segun el ratio peso/beneficio de los objetos
      */
     sortPesoBeneficio(): [number, number][] {
-        this.pesoBeneficio = this.pesoBeneficio.sort((n1, n2) => n2[0]/n1[1] - n1[1]/n2[1]);
-        this.pesoBeneficio.reverse();
+        this.pesoBeneficio = this.pesoBeneficio.sort((n1, n2) => n2[0]/n2[1] - n1[0]/n1[1]);
         return this.pesoBeneficio;
     }
 
@@ -46,7 +45,7 @@ export class Backpack {
     fillBackpackVoraz(): number {
         let backpack = 0;
         this.pesoBeneficio.forEach(ratio => {
-            if ((backpack + ratio[0]) < this.pesomax) {
+            if ((backpack + ratio[0]) <= this.pesomax) {
                 backpack = backpack + ratio[0];
             }
         });
